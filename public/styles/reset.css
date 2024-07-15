@@ -1,0 +1,34 @@
+/* Reset CSS */
+
+/* Set box-sizing to border-box for all elements and remove default padding and margin */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+/* Reset font styles */
+body, button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+/* Reset list styles */
+ol, ul {
+    list-style: none;
+}
+
+/* Reset anchor styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
