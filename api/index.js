@@ -33,22 +33,66 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/web_pages/index.html'));
 })
 
+app.get('/signup', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/web_pages/sign_up.html'));
+})
+
+app.post('/signup', async (req, res) => {
+
+    const { username, password } = req.body;
+    const query = `insert into users (username, password) values (?, ?)`;
+
+    const hashed_pwd = await hashPassword(password);
+
+    db.query(query, [username, hashed_pwd], async (err, result) => {
+            
+        if (err) {
+            if (err.code === 'ER_DUP_ENTRY') {
+                return res.status(409).json({ message: 'Username already exists' });
+            }
+            console.log(err);
+        }
+
+        res.status(200).json({ message: 'User registered successfully' });
+    })
+
+})
+
+app.get('/login', (req, res) => {
+    res.redirect('/');
+})
+
 app.post('/login', (req, res) => {
 
     const { username, password } = req.body;
 
-    db.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], (err, result) => {
+    const getPasswordQuery = 'SELECT id,password FROM users WHERE username = ?';
+
+    db.query(getPasswordQuery, [username], async (err, result) => {
 
         if (err) {
             console.log(err);
         }
 
         if (result.length > 0) {
-            res.status(200).json({ userId: result[0].id }); 
+
+            const pwVerifyResut = await verifyPassword(result[0].password, password);
+
+            if (pwVerifyResut) {
+
+                const id = result[0].id;
+                res.status(200).json({ message: 'Login successful', userId: id });
+
+            } else {
+
+                res.status(401).json({ message: 'Invalid username or password' });
+
+            }
         } else {
             res.status(401).json({ message: 'Invalid username or password' });
         }
     })
+
 })
 
 app.get('/home', (req, res) => {
@@ -58,3 +102,23 @@ app.get('/home', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 })
+
+async function hashPassword(password) {
+
+    try {
+        return await argon2.hash(password);
+    } catch (err) {
+        console.log(err);
+    }
+
+}
+
+async function verifyPassword(hashedPassword, password) {
+
+    try {
+        return await argon2.verify(hashedPassword, password);
+    } catch (err) {
+        console.log(err);
+    }
+
+}

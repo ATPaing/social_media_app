@@ -9,25 +9,19 @@ body{
     background: radial-gradient(circle, #bdcdf5 38%, #DDEAFF 100%);
 }
 
-.logo_img{
-    width: 130px;
-    
-}
-
-.login_form{
+.sign_up_form{
     display: flex;
     flex-direction: column;
-    
-    gap: 1.35em;
-}
-
-.login_form__inputs{
-    display: flex;
-    align-items: center;
     gap: 1em;
 }
 
-.login_form__inputs label {
+.sign_up_form__inputs{
+    display: flex;
+    align-items: center;
+    gap: 1.35em;
+}
+
+.sign_up_form__inputs label {
     margin-left: auto;
     font-size: 1.2rem;
     font-weight: bold;
@@ -37,8 +31,7 @@ body{
     letter-spacing: 2px;
 }
 
-.login_form__inputs input {
-    margin-left: auto;
+.sign_up_form__inputs input{
     height: 35px;
     width: 250px;
     border: 0px solid black;
@@ -48,7 +41,7 @@ body{
     text-indent: 0.5em;
 }
 
-.log_in_btn{
+.sign_up_btn{
     border: 1px solid transparent;
     background-color: #59D0F6;
     width: max-content;
@@ -66,8 +59,8 @@ body{
     cursor: pointer;
 }
 
-.log_in_btn:hover,
-.log_in_btn:focus{
+.sign_up_btn:hover,
+.sign_up_btn:focus{
     outline: none;
     background-color: #9da1fe;
 }
@@ -83,17 +76,15 @@ body{
     display: none;
 }
 
-.sign_up{
+.log_in{
     font-size: 0.95rem;
-    /* border: 1px solid red; */
     width: max-content;
     margin-left: auto;
-    margin-right: 0.5em;
+    margin-right:0.5em;
     padding: 0.5em 1em;
-    margin-top: -1em;
     color: #6c6c6c;
 }
 
-.sign_up:hover{
+.log_in:hover{
     color: #303030;
 }

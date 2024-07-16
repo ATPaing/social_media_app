@@ -28,11 +28,9 @@ loginForm.addEventListener('submit', async(e) => {
     const data = await response.json();
 
     if (response.ok) {
-        
         const userId = data.userId
         localStorage.setItem('userId', userId);
         window.location.href = '/home';
-
     } else {
 
         resMessage.textContent = `**${data.message}`;
