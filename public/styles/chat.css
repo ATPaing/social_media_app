@@ -177,7 +177,7 @@ main {
 
 .chat_input_form{
     margin-top: 1.5em;
-    display: flex;
+    display: none;
     gap: 1em;
     align-items: center;
     justify-content: space-between;

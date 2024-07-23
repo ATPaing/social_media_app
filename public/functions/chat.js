@@ -246,6 +246,7 @@ function generateFriends(friends) {
             room = `${username}-${el.textContent}`;
             receiver = el.textContent;
             socket.emit('join-room', `${room}`);
+            chat_input_form.style.display = 'flex';
         });
     }
 }
