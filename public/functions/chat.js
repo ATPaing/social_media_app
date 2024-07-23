@@ -163,7 +163,7 @@ function addClickFunctionToFriSearched() {
     for (const el of fri_searched) {
         el.addEventListener('click', async () => {
             const actualNameElement = el.querySelector('.actual_name');
-            const friend_name = actualNameElement.textContent.trim(); // Get friend name
+            const friend_name = actualNameElement.textContent; 
             const friend_id = await getFriendId(friend_name);
             addFriend(friend_id, friend_name, id);
         });

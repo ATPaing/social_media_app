@@ -5,7 +5,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const { Server } = require('socket.io'); 
 const http = require('http');
-
+const { faker } = require('@faker-js/faker');
 const { format } = require('date-fns');
 
 const argon2 = require('argon2');
@@ -466,6 +466,4 @@ io.on('connection', (socket) => {
         console.log('A user disconnected');
     });
 });
-
-
 
