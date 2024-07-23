@@ -165,6 +165,7 @@ function addClickFunctionToFriSearched() {
             const actualNameElement = el.querySelector('.actual_name');
             const friend_name = actualNameElement.textContent; 
             const friend_id = await getFriendId(friend_name);
+            console.log(id)
             addFriend(friend_id, friend_name, id);
         });
     }
@@ -173,13 +174,15 @@ function addClickFunctionToFriSearched() {
 
 async function addFriend(second_user_id, friend_name, id) {
 
+    const first_user_id = id;
+
     // Check if the friend is already added
     const checkRes = await fetch('/api/check_friend', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ id, second_user_id })
+        body: JSON.stringify({ first_user_id, second_user_id })
     });
 
     const checkData = await checkRes.json();
@@ -194,7 +197,7 @@ async function addFriend(second_user_id, friend_name, id) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ id, second_user_id })
+        body: JSON.stringify({ first_user_id, second_user_id })
     });
 
     const data = await res.json();
