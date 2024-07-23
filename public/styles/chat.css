@@ -1,0 +1,209 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    position: relative;
+    display: flex;
+    /* gap: 1.35em; */
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    width: max-content; 
+    overflow: auto;
+    scroll-behavior: smooth;
+    background: #22222D; 
+}
+
+.search_friend{
+    display: flex;
+    position: relative;
+    padding: 0.75em;
+}
+
+.friend_list_dropdown{
+    position: absolute;
+    width: 100%;
+    height: max-content;
+    max-height: 200px;
+    top: 90%;
+    left: 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.fri_searched,
+.fri_not_found{
+    width: 100%;
+    background-color: hsla(180, 1%, 28%);
+    padding: 1em;
+    color: white;
+    cursor: pointer;
+}
+
+.fri_searched {
+    display: flex;
+}
+
+.fri_searched:nth-child(2n) {
+    background-color: hsl(0, 0%, 25%);
+}
+
+.fri_searched:hover {
+    background-color: hsl(0, 0%, 20%);
+}
+
+.fri_searched .status {
+    color: gray;
+    font-size: 0.9em;
+    margin-left: auto;
+}
+
+.friend_list_dropdown:empty {
+    display: none;
+}
+
+.search_friend_input{
+    border-radius: 50px 0 0 50px;
+    text-indent: 1em;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+
+.search_icon{
+    padding: 0.1em;
+    padding-right: 0.5em;
+    background-color: white;
+    border-radius: 0 50px 50px 0;
+}
+
+
+
+.friends_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.fri_name{
+    background-color: #586574;
+    padding: 1em;
+    padding-left: 2em;
+    color: white;
+    font-size: 1.2rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+.fri_name:nth-child(2n) {
+    background-color: #434e5c;
+}
+
+.fri_name:hover {
+    mix-blend-mode:lighten;
+    background-color: #43638d;
+    color: white;
+}
+
+.fri_name.selected{
+    background-color: #9becf2;
+    text-decoration: underline;
+    color: black;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    flex-grow: 1;
+    background: linear-gradient(to bottom, #798EAD 0%, #383f49 100%);
+    overflow: none;
+    padding-inline: 3em;
+    padding-block: 2em;
+}
+
+.chat_display{
+    margin-top: auto;
+    height: max-content;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.highlight {
+    font-weight: bold;
+    color: yellow;
+}
+
+
+.chat_message{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    width: max-content;
+}
+
+.chat_message_me{
+    margin-left: auto;
+}
+
+.message_who{
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+.message_what{
+    width: max-content;
+    background-color: #3a5e8b;
+    mix-blend-mode:color-dodge;
+    color: white;
+    width: max-content;
+    padding: 0.35em 0.7em;
+    border-radius: 5px;
+}
+
+.message_who_you{
+    margin-left: auto;
+}
+
+.chat_input_form{
+    margin-top: 1.5em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat_text_input{
+    width: 90%;
+    border: none;
+    height: 35px;
+    border-radius: 10px;
+    text-indent: 1em;
+}
+
+.chat_send_button{
+    /* font-weight: 600; */
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 500px;
+    background-color: #34ba48;
+    mix-blend-mode:color-dodge;
+    color: rgb(72, 72, 72);
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.chat_send_button:hover{
+    background-color: #3a8b4e;
+    color: white;
+}

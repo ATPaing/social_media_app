@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Li | Feeds</title>
+    <link rel="icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/feeds.css">
+    <link rel="stylesheet" href="../styles/card.css">
 </head>
 <body>
-    <p>This is user feed</p>
+    <nav>
+        <div class="nav_left">
+            <div class="nav_left__img">
+                <img src="../images/nav_logo.png" alt="">
+            </div>
+            <div class="nav_left__links">
+                <a href="/home">Home</a>
+                <a href="/chat">Chats</a>
+            </div>
+        </div>
+        <div class="nav_right">
+            <button class="logout_button">Log out</button>
+        </div>
+    </nav>
+    <main>
+        <div class="sidebar">
+            <div class="sidebar__thread sidebar__links">
+                <div class="thread_wrapper">
+                    <div class="sidebar__links__img">
+                        <img src="../images/threads_icon.png" alt="">
+                    </div>
+                    <a href="#" class="sidebar__link selected">Threads</a>
+                </div>
+                <p class="add_thread" id="add_thread">+</p>
+            </div>
+        </div>
+        <div id="feeds" class="feeds">
+            
+        
+        </div>
+        <dialog id="threadDialog">
+            <form id="threadForm">
+                <input id="thread_ask_input" type="text" aria-label="add_thread" placeholder="Ask here">
+                <button type="submit">Add</button>
+            </form>
+            <p id="cancel_button" class="cancel_button">Cancel</p>
+        </dialog>  
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="../functions/feeds.js"></script>
+    <script src="../functions/feed_socket.js"></script>
 </body>
+
 </html>

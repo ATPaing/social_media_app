@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li | View</title>
+    <link rel="icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/user_feed_view.css">
+    
+</head>
+<body>
+    <nav>
+        <div class="nav_left">
+            <div class="nav_left__img">
+                <img src="../images/nav_logo.png" alt="">
+            </div>
+            <div class="nav_left__links">
+                <a href="/home">Home</a>
+                <a href="/chat">Chats</a>
+            </div>
+        </div>
+        <div class="nav_right">
+            <button class="logout_button">Log out</button>
+        </div>
+    </nav>
+    <main>
+        <div class="question_wrapper" id="question-wrapper">
+
+        </div>
+        <div class="replies_section" id="replies_section">
+            
+
+        </div>
+        <form id="reply_form"  class="reply_form">
+            <input id="reply_input" type="text" aria-label="reply_form" placeholder="Give suggestions">
+            <button class="reply_form__form__button">Reply</button>
+        </form>
+    </main>
+    
+    <script src="../functions/get_replies_by_thread_Id.js" type="module"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../functions/sendReplyToThread.js" type="module"></script>
+</body>
+
+</html>

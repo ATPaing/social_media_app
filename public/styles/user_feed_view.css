@@ -1,0 +1,124 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #4A4E5C;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    max-width: 50vw;
+    margin-inline: auto;
+    padding: 2em;
+    gap: 1em;
+}
+
+.question_wrapper{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.question_meta_data{
+    display: flex;
+    justify-content: space-between;
+    color: #D2D6DC;
+}
+
+.question{
+    font-size: 2rem;
+    width: max-content;
+    color: rgb(249, 250, 192);
+    text-shadow: 1px 1px 3px rgb(103, 103, 103);
+    letter-spacing: 1px;
+}
+
+.replies_section{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2.35em;
+    height: 400px;
+    overflow: auto;
+}
+
+.reply_wrapper{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    /* padding: 1em; */
+    border-left: 3px solid #D6D6D6;
+    text-align: justify;
+    text-justify: inter-word;
+    
+}
+
+.reply{
+    display: flex;
+    flex-direction: column;
+    background-color: #3B4252;
+    padding: 1em;
+}
+
+.reply_meta_data{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reply_meta_data_content{
+    color: #D2D6DC;
+    font-size: 0.75rem;
+}
+
+.reply_content{
+    color: #ECECEC;
+    font-size: 1.35rem;
+    text-wrap: wrap;
+}
+
+.reply_form {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    margin-top: 1.5em;
+    align-items: center;
+}
+
+.reply_form input[type="text"] {
+    flex-grow: 1;
+    padding: 0.75em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #192740;
+    background-color: #c7c7c7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.reply_form input[type="text"]::placeholder {
+    color: #192740;
+}
+
+.reply_form__form__button {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #ECECEC;
+    background-color: #5E81AC;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.reply_form__form__button:hover {
+    background-color: #4C669F;
+}
+
+.reply_form__form__button:active {
+    background-color: #3B4252;
+}

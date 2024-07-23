@@ -1,0 +1,133 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    position: relative;
+    display: flex;
+    /* gap: 1.35em; */
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+
+.sidebar {
+    min-width: 250px;
+    width: max-content; 
+    overflow: auto;
+    scroll-behavior: smooth;
+    background: #22222D; 
+}
+
+.thread_wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.add_thread{
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+.add_thread:hover {
+    color: #86f659;
+}
+
+.selected{
+    text-decoration: underline;
+}
+
+.sidebar__links{
+    display: flex;
+    gap: 0.75em;
+    align-items: center;
+    padding: 1em;
+    padding-left: 2em;
+    background-color: #3B3F4B;
+}
+
+.sidebar__links__img{
+    width: 35px;
+}
+
+.sidebar__link{
+    width: max-content;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.sidebar__link:hover{
+    color: #59D0F6;
+}
+
+.feeds{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    flex-grow: 1;
+    background-color: #4A4E5C;
+    scroll-behavior: smooth;
+    overflow: auto;
+    padding-inline: 3em;
+    padding-block: 2em;
+}
+
+dialog {
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #3B3F4B;
+    padding: 20px;
+    color: white;
+    margin: auto;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+dialog input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+dialog button[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #40a5c7;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+dialog button[type="submit"]:hover {
+    background-color: #279ec6;
+}
+
+.cancel_button{
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1rem;
+    color: rgb(197, 197, 197);
+    cursor: pointer;
+}
+
+.cancel_button:hover{
+    color: white;
+}

@@ -1,0 +1,87 @@
+.card{
+    display: flex;
+    align-items: center;
+    background-color: #485c85;
+    padding: 1em 1.5em;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px rgb(250, 226, 226);
+    transition: all 0.3s;
+}
+
+
+.card__left{
+    display: flex;
+    flex-direction: column;
+}
+
+.asked_by{
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.question{
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: rgb(249, 250, 192);
+    text-shadow: 1px 2px 5px rgb(58, 58, 58);
+    letter-spacing: 1px;
+    text-wrap: wrap;
+    user-select: none;
+}
+
+.timestamp{
+    font-size: 0.7rem;
+    margin-left: auto;
+    font-weight: 600;
+    color: #D2D6DC;
+    letter-spacing: 0.5px;
+}
+
+.card__left_reacts{
+    display: flex;
+    align-items: center;
+    margin-top: 1.35em;
+    gap: 1em;
+}
+
+.react_image{
+    width: 17px;
+    height: 17px;
+}
+
+.card__left_reacts__react{
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.react_counts{
+    font-size: 1.05rem;
+    /* font-weight: 600; */
+    color: rgb(234, 234, 234);
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+
+.card__right{
+    margin-left: auto;
+}
+
+.view_button{
+    background-color: #39ffd7;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: 3px solid transparent;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(93, 93, 93);
+    box-shadow: 1px 1px 5px rgb(58, 58, 58);
+}
+
+.view_button:hover{
+    background-color: #188670;
+    color: rgb(255, 255, 255);
+}

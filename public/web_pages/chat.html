@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li | Chat</title>
+    <link rel="icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/chat.css">
+</head>
+<body>
+    <nav>
+        <div class="nav_left">
+            <div class="nav_left__img">
+                <img src="../images/nav_logo.png" alt="">
+            </div>
+            <div class="nav_left__links">
+                <a href="/home">Home</a>
+                <a href="/chat">Chats</a>
+            </div>
+        </div>
+        <div class="nav_right">
+            <button class="logout_button">Log out</button>
+        </div>
+    </nav>
+    <main>
+        <div class="sidebar">
+            <div class="search_friend">
+                <input id="search-friend-input" class="search_friend_input" type="text" aria-label="search_friend_input" placeholder="search friends">
+                <svg class="search_icon" width="27" height="35" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.7523 20.5563L16.4622 15.2672C17.9955 13.4264 18.76 11.0653 18.5969 8.67513C18.4337 6.28495 17.3553 4.0497 15.586 2.43436C13.8168 0.819025 11.4928 -0.0520274 9.09772 0.00240577C6.7026 0.0568389 4.42066 1.03257 2.72661 2.72661C1.03257 4.42066 0.0568389 6.7026 0.00240577 9.09772C-0.0520274 11.4928 0.819025 13.8168 2.43436 15.586C4.0497 17.3553 6.28495 18.4337 8.67513 18.5969C11.0653 18.76 13.4264 17.9955 15.2672 16.4622L20.5563 21.7523C20.6348 21.8308 20.728 21.8931 20.8307 21.9356C20.9333 21.9781 21.0432 22 21.1543 22C21.2654 22 21.3753 21.9781 21.4779 21.9356C21.5805 21.8931 21.6738 21.8308 21.7523 21.7523C21.8308 21.6738 21.8931 21.5805 21.9356 21.4779C21.9781 21.3753 22 21.2654 22 21.1543C22 21.0432 21.9781 20.9333 21.9356 20.8307C21.8931 20.728 21.8308 20.6348 21.7523 20.5563ZM1.71383 9.32097C1.71383 7.81642 2.15998 6.34565 2.99586 5.09467C3.83174 3.84368 5.01982 2.86865 6.40984 2.29289C7.79986 1.71712 9.3294 1.56647 10.805 1.86C12.2807 2.15352 13.6361 2.87803 14.7 3.94191C15.7639 5.00578 16.4884 6.36125 16.7819 7.83689C17.0755 9.31253 16.9248 10.8421 16.349 12.2321C15.7733 13.6221 14.7983 14.8102 13.5473 15.6461C12.2963 16.482 10.8255 16.9281 9.32097 16.9281C7.30411 16.9259 5.37051 16.1237 3.94438 14.6976C2.51825 13.2714 1.71607 11.3378 1.71383 9.32097Z" fill="#9A9A9A"/>
+                </svg>
+                <div id="friend-list-dropdown" class="friend_list_dropdown"></div>
+            </div>
+            <div id="friend-list" class="friends_list"></div>
+        </div>
+        <div class="chat">
+            <div id="chat_display" class="chat_display">
+                <!-- <div class="chat_message_other chat_message">
+                    <p class="message_who">From Thiri:</p>
+                    <p class="message_what">Hey 1 !</p>
+                </div>
+                <div class="chat_message_me chat_message">
+                    <p class="message_who message_who_you">You:</p>
+                    <p class="message_what">Hi 1 !</p>
+                </div>
+                <div class="chat_message_other chat_message">
+                    <p class="message_who">From Thiri:</p>
+                    <p class="message_what">Hey 2 !</p>
+                </div>
+                <div class="chat_message_me chat_message">
+                    <p class="message_who message_who_you">You:</p>
+                    <p class="message_what">Hi  2!</p>
+                </div> -->
+            </div>
+            <form id="chat_input_form" class="chat_input_form">
+                <input id="chat_input" class="chat_text_input" type="text" placeholder="Type your message here" aria-label="Type your message here">
+                <button class="chat_send_button">Send</button>
+            </form>
+        </div>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../functions/chat.js"></script>
+    
+</body>
+</html>
